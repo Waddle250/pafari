@@ -1233,7 +1233,7 @@ window_cmd_show_about (GSimpleAction *action,
   }
 
   // adw_about_dialog_set_version (dialog, VERSION);
-  adw_about_dialog_set_version (dialog, "NiceC0re 26.1 Release");
+  adw_about_dialog_set_version (dialog, "NiceC0re 26.2.2 Release");
 
   // adw_about_dialog_set_copyright (dialog,
   //                                 "Copyright © 2002–2004 Marco Pesenti Gritti\n"

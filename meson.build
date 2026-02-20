@@ -1,6 +1,6 @@
 project('epiphany', 'c',
   license: 'GPL3+',
-  version: '49.1',
+  version: '26.2.2',
   meson_version: '>= 1.1',
   default_options: ['c_std=gnu23',
                     'warning_level=2']
@@ -160,7 +160,9 @@ add_project_arguments(cflags,
                       language: 'c')
 
 subdir('data')
-subdir('help')
+if get_option('help')
+  subdir('help')
+endif
 subdir('po')
 subdir('third-party')
 subdir('lib')

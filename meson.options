@@ -33,3 +33,9 @@ option('man-pages',
   value: 'auto',
   description: 'Enable man page generation (requires rst2man)'
 )
+
+option('help',
+  type: 'boolean',
+  value: true,
+  description: 'Build Yelp help documentation (requires itstool and Python libxml2)'
+)

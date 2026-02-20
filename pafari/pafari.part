@@ -18,9 +18,8 @@ third-party
 TODO
 README.md
 src
-Makefile
 pafari.install
 pafari
-build
+Makefile
 PKGBUILD
-pkg
+run-pafari.sh

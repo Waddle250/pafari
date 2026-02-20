@@ -1,5 +1,5 @@
 PKGNAME=pafari
-PKGVER=26.1
+PKGVER=26.2.2
 
 .PHONY: build clean install
 

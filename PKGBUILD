@@ -33,30 +33,27 @@ makedepends=(
   'blueprint-compiler'
   'appstream-glib'
 )
-source=("file:///home/alxb421/Desktop/pafari")
+# Build din directorul curent (unde e PKGBUILD); nu mai e nevoie de tarball .gz
+source=("PKGBUILD")
 install=pafari.install
 sha256sums=('SKIP')
 
 build() {
-  cd "/home/alxb421/Desktop/pafari"
-  
+  cd "$startdir"
   meson setup . build \
     --prefix=/usr \
     --libdir=lib \
     --buildtype=plain \
     -Ddeveloper_mode=false \
     -Dtech_preview=false \
-    -Dprofile=''
-  
+    -Dprofile='' \
+    -Dhelp=false
   ninja -C build
 }
 
 package() {
-  cd "/home/alxb421/Desktop/pafari"
-  
+  cd "$startdir"
   DESTDIR="$pkgdir" ninja -C build install
-  
-  # Creează fișierul de configurare pentru linker să știe unde sunt bibliotecile
   install -Dm644 /dev/null "$pkgdir/etc/ld.so.conf.d/pafari.conf"
   echo "/usr/lib/epiphany" > "$pkgdir/etc/ld.so.conf.d/pafari.conf"
 }
