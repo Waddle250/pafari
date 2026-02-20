@@ -215,7 +215,7 @@ handle_get_result_metas (EphyShellSearchProvider2  *skeleton,
                              "name", g_variant_new_take_string (g_strdup_printf (_("Search the web for “%s”"),
                                                                                  results[i] + strlen ("special:search:"))));
       g_variant_builder_add (&builder, "{sv}",
-                             "gicon", g_variant_new_string (APPLICATION_ID));
+                             "gicon", g_variant_new_string (EPHY_ICON_NAME));
       g_variant_builder_close (&builder);
     } else if (g_str_has_prefix (results[i], "special:load:")) {
       g_variant_builder_open (&builder, G_VARIANT_TYPE ("a{sv}"));
@@ -225,7 +225,7 @@ handle_get_result_metas (EphyShellSearchProvider2  *skeleton,
                              "name", g_variant_new_take_string (g_strdup_printf (_("Load “%s”"),
                                                                                  results[i] + strlen ("special:load:"))));
       g_variant_builder_add (&builder, "{sv}",
-                             "gicon", g_variant_new_string (APPLICATION_ID));
+                             "gicon", g_variant_new_string (EPHY_ICON_NAME));
       g_variant_builder_close (&builder);
     } else {
       EphySuggestion *suggestion;

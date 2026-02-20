@@ -1118,7 +1118,7 @@ ephy_history_dialog_init (EphyHistoryDialog *self)
   update_ui_state (self);
 
   adw_status_page_set_icon_name (ADW_STATUS_PAGE (self->empty_history_message),
-                                 APPLICATION_ID "-symbolic");
+                                 EPHY_ICON_NAME "-symbolic");
 
   shortcut = gtk_shortcut_new (gtk_alternative_trigger_new (gtk_keyval_trigger_new (GDK_KEY_Down, 0),
                                                             gtk_keyval_trigger_new (GDK_KEY_Page_Down, 0)),

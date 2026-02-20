@@ -4796,7 +4796,7 @@ ephy_window_new (void)
                        "application", GTK_APPLICATION (ephy_shell_get_default ()),
                        "default-height", 768,
                        "default-width", 1024,
-                       "icon-name", APPLICATION_ID,
+                       "icon-name", EPHY_ICON_NAME,
                        NULL);
 }
 

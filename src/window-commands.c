@@ -1246,7 +1246,7 @@ window_cmd_show_about (GSimpleAction *action,
   adw_about_dialog_set_license_type (dialog, GTK_LICENSE_UNKNOWN);
   adw_about_dialog_set_website (dialog, "https://github.com/pearOS-archlinux/pafari");
   adw_about_dialog_add_link (dialog, _("Donate"), "https://pearos.xyz/donate");
-  adw_about_dialog_set_application_icon (dialog, APPLICATION_ID);
+  adw_about_dialog_set_application_icon (dialog, EPHY_ICON_NAME);
 
   /* Hide Credits section by not setting developers, designers, documenters, translator-credits */
   /* adw_about_dialog_set_developers (dialog, (const char **)authors); */

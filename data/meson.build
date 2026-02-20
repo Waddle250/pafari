@@ -14,8 +14,38 @@ install_data(
   rename: '@0@-symbolic.svg'.format(application_id)
 )
 
+# Iconul folosit mereu: org.gnome.Epiphany (busola/glob)
+icondir_scalable = join_paths('icons', 'hicolor', 'scalable', 'apps')
+icondir_symbolic = join_paths('icons', 'hicolor', 'symbolic', 'apps')
+install_data(
+  join_paths(icondir_scalable, 'org.gnome.Epiphany.svg'),
+  install_dir: join_paths(datadir, icondir_scalable),
+)
+install_data(
+  join_paths(icondir_symbolic, 'org.gnome.Epiphany-symbolic.svg'),
+  install_dir: join_paths(datadir, icondir_symbolic),
+)
+
+# Copiază iconul Epiphany în build dir (pentru ./run-pafari.sh).
+copy_icons_conf = configuration_data()
+copy_icons_conf.set('BUILD_DATA_DIR', meson.current_build_dir())
+copy_icons_script = configure_file(
+  input: 'copy-epiphany-icons.sh.in',
+  output: 'copy-epiphany-icons.sh',
+  configuration: copy_icons_conf,
+)
+custom_target('copy-app-icons-for-run',
+  output: 'app-icons-copied',
+  input: [
+    join_paths(icondir_scalable, 'org.gnome.Epiphany.svg'),
+    join_paths(icondir_symbolic, 'org.gnome.Epiphany-symbolic.svg'),
+  ],
+  command: [find_program('sh'), copy_icons_script, '@INPUT0@', '@INPUT1@', '@OUTPUT@'],
+  build_by_default: true,
+)
+
 desktop_conf = configuration_data()
-desktop_conf.set('icon', application_id)
+desktop_conf.set('icon', 'org.gnome.Epiphany')
 desktop = i18n.merge_file(
   input: configure_file(
     input: files('org.gnome.Epiphany.desktop.in.in'),

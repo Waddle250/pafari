@@ -384,7 +384,7 @@ ephy_data_view_init (EphyDataView *self)
                                 GTK_EDITABLE (priv->search_entry));
 
   adw_status_page_set_icon_name (ADW_STATUS_PAGE (priv->empty_page),
-                                 APPLICATION_ID "-symbolic");
+                                 EPHY_ICON_NAME "-symbolic");
 
   update (self);
 }

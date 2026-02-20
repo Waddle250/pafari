@@ -1,5 +1,5 @@
 pkgname=pafari
-pkgver=26.2
+pkgver=26.2.2
 pkgrel=1
 pkgdesc="Pafari - A simple, clean, beautiful web browser"
 arch=('x86_64')
@@ -38,7 +38,6 @@ install=pafari.install
 sha256sums=('SKIP')
 
 build() {
-  # Folosim direct calea hardcodată pentru că file:// nu funcționează corect cu symlink-uri
   cd "/home/alxb421/Desktop/pafari"
   
   meson setup . build \

@@ -195,7 +195,7 @@ main (int   argc,
   g_setenv ("GSETTINGS_SCHEMA_DIR", BUILD_ROOT "/data", FALSE);
 #endif
 
-  g_setenv ("PULSE_PROP_application.icon_name", APPLICATION_ID, TRUE);
+  g_setenv ("PULSE_PROP_application.icon_name", EPHY_ICON_NAME, TRUE);
 
   /* Initialize the i18n stuff */
   bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
@@ -428,7 +428,7 @@ main (int   argc,
     g_set_prgname ("pafari");
     g_set_application_name (_("Pafari"));
 
-    gtk_window_set_default_icon_name (APPLICATION_ID);
+    gtk_window_set_default_icon_name (EPHY_ICON_NAME);
   }
 
   maximize_fd_limit ();

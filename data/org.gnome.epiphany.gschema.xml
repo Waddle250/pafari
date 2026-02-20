@@ -263,9 +263,9 @@
 			<description>Keep track of last download directory</description>
 		</key>
 		<key name="hardware-acceleration-policy" enum="org.gnome.Pafari.EphyPrefsWebHardwareAccelerationPolicy">
-			<default>'always'</default>
+			<default>'never'</default>
 			<summary>Hardware acceleration policy</summary>
-			<description>Whether to enable hardware acceleration. Possible values are “always” and “never”. Hardware acceleration may be required to achieve acceptable performance on embedded devices, but increases memory usage requirements and could expose severe hardware-specific graphics driver bugs.</description>
+			<description>Whether to enable hardware acceleration. Possible values are “always” and “never”. Set to “never” to avoid crashes on heavy sites (e.g. YouTube) when GPU drivers are buggy. “always” may be required for acceptable performance on embedded devices.</description>
 		</key>
 		<key type="b" name="ask-on-download">
 			<default>false</default>
