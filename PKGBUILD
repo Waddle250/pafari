@@ -1,5 +1,5 @@
 pkgname=pafari
-pkgver=26.2.2
+pkgver=26.5.1
 pkgrel=1
 pkgdesc="Pafari - A simple, clean, beautiful web browser"
 arch=('x86_64')
